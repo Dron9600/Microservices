@@ -1,5 +1,6 @@
 package kz.prudnikov.employeeservice.service;
 
+import kz.prudnikov.employeeservice.dto.APIResponseDto;
 import kz.prudnikov.employeeservice.dto.EmployeeDto;
 
 import java.util.List;
@@ -8,7 +9,7 @@ public interface EmployeeService {
 
     EmployeeDto saveEmployee(EmployeeDto employeeDto);
 
-    EmployeeDto getEmployeeById(Long id);
+    APIResponseDto getEmployeeById(Long id);
 
     List<EmployeeDto> getAllEmployees();
 
