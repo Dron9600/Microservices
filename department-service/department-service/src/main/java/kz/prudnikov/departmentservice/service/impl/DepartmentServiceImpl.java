@@ -29,12 +29,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public DepartmentDto getDepartmentById(Long id) {
-        Department department  = departmentRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Department", "id", id)
-        );
-        DepartmentDto getDtoById = AutoDepartmentMapper.MAPPER.mapToDepartmentDto(department);
-        return  getDtoById;
+    public DepartmentDto getDepartmentByCode(String code) {
+        Department department  = departmentRepository.findByDepartmentCode(code);
+        DepartmentDto getDtoByCode = AutoDepartmentMapper.MAPPER.mapToDepartmentDto(department);
+        return  getDtoByCode;
     }
 
     @Override
